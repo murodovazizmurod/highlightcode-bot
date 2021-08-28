@@ -27,7 +27,7 @@ db.create(User)
 bot = TeleBot('1983932455:AAFjFaK9J4Cpy5v1tJDjbN99AxBoXZsZxY4')
 
 def generate_image(code):
-    formatter = ImageFormatter(font_size=16, style="fruitci")
+    formatter = ImageFormatter(font_size=16, style="monokai")
     lexer = guess_lexer(code)
     name = datetime.now().strftime('%d%m%Y_%H%M')
     with open(name+".png", "wb") as f:
