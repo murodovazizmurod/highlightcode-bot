@@ -72,10 +72,10 @@ def text(m):
         except:
             pass
         if not isinstance(guess_lexer(m.text), TextLexer):
+            markup = types.InlineKeyboardMarkup()
+            markup.add(types.InlineKeyboardButton(f'Remove (for {m.from_user.first_name or m.from_user.last_name})', callback_data=f'remove#{m.from_user.id}'))
+            name = generate_image(m.text)
             try:
-                markup = types.InlineKeyboardMarkup()
-                markup.add(types.InlineKeyboardButton(f'Remove (for {m.from_user.first_name or m.from_user.last_name})', callback_data=f'remove#{m.from_user.id}'))
-                name = generate_image(m.text)
                 bot.send_photo(m.chat.id, photo=open(os.path.join(os.getcwd(), name), 'rb'), caption='You are welcome :)', reply_to_message_id=m.message_id, reply_markup=markup)
                 os.remove(os.path.join(os.getcwd(), name))
             except:
