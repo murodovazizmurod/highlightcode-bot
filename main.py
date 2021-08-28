@@ -24,7 +24,7 @@ db.create(Groups)
 
 db.create(User)
 
-bot = TeleBot('1983932455:AAFjFaK9J4Cpy5v1tJDjbN99AxBoXZsZxY4')
+bot = TeleBot('TOKEN')
 
 def generate_image(code):
     formatter = ImageFormatter(font_size=16, style="native")
